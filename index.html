@@ -4,11 +4,251 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/flexible.js"></script>
+    <script type="text/javascript" src="./js/echarts.min.js"></script>
     <title>数据大屏</title>
 </head>
 <body>
-    <div class="top"></div>
-    <div class="center"></div>
-    <div class="bot"></div>
+    <div class="mess">
+        <div class="top">
+            <div class="text">2020-06-12 10:20:30</div>
+            <div class="name">项城云APP数据展示面板</div>
+            <div class="city">
+                <span>青岛市</span>
+                <span>20°</span>
+                <span>雨</span>
+                <span>风力≤3</span>
+            </div>
+        </div>
+        <div class="bot">
+            <div class="left">
+                <div class="leftTop">
+                    <div class="h1"><span>活跃人数</span><span>(近七日)</span></div>
+                    <div class="echars" id="leftTop"></div>
+                </div>
+                <div class="leftCenter">
+                        <div class="h1"><span>热点新闻</span></div>
+                        <div class="newMessage">
+                            <ul>
+                                <li>
+                                    <div class="liLeft">
+                                        <img src="./img/leftnewMess.png" alt=""><span>城市住建局召开创建全国文明城市</span>
+                                    </div>
+                                    <div class="liRight"><span>2020-06-10 78956</span></div>
+                                </li>
+                                <li>
+                                    <div class="liLeft">
+                                        <img src="./img/leftnewMess.png" alt=""><span>城市住建局召开创建全国文明城市</span>
+                                    </div>
+                                    <div class="liRight"><span>2020-06-10 78956</span></div>
+                                </li>
+                                <li>
+                                    <div class="liLeft">
+                                        <img src="./img/leftnewMess.png" alt=""><span>城市住建局召开创建全国文明城市</span>
+                                    </div>
+                                    <div class="liRight"><span>2020-06-10 78956</span></div>
+                                </li>
+                                <li>
+                                    <div class="liLeft">
+                                        <img src="./img/leftnewMess.png" alt=""><span>城市住建局召开创建全国文明城市</span>
+                                    </div>
+                                    <div class="liRight"><span>2020-06-10 78956</span></div>
+                                </li>
+                                <li>
+                                    <div class="liLeft">
+                                        <img src="./img/leftnewMess.png" alt=""><span>城市住建局召开创建全国文明城市</span>
+                                    </div>
+                                    <div class="liRight"><span>2020-06-10 78956</span></div>
+                                </li>
+                                <li>
+                                    <div class="liLeft">
+                                        <img src="./img/leftnewMess.png" alt=""><span>城市住建局召开创建全国文明城市</span>
+                                    </div>
+                                    <div class="liRight"><span>2020-06-10 78956</span></div>
+                                </li>
+                                <li>
+                                    <div class="liLeft">
+                                        <img src="./img/leftnewMess.png" alt=""><span>城市住建局召开创建全国文明城市</span>
+                                    </div>
+                                    <div class="liRight"><span>2020-06-10 78956</span></div>
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+                <div class="leftBot">
+                        <div class="h1"><span>活跃人数</span><span>(近七日)</span></div>
+                        <div class="shengji" id="leftBot"></div>
+                </div>
+            </div>
+            <div class="center">
+                <div class="centerTop">
+                    <div class="cc"><img src="./img/qiu.png" alt=""></div>
+                    <div class="one"><span>总PV访问量</span><h1>98 , 456 , 567</h1></div>
+                    <div class="two"><span>总PV访问量</span><h1>98 , 456 , 567</h1></div>
+                    <div class="three"><span>总PV访问量</span><h1>98 , 456 , 567</h1></div>
+                    <div class="four"><span>总PV访问量</span><h1>98 , 456 , 567</h1></div>
+                    <div class="five"><span>总PV访问量</span><h1>98 , 456 , 567</h1></div>
+                    <div class="six"><span>总PV访问量</span><h1>98 , 456 , 567</h1></div>
+                </div>
+                <div class="centerBot">
+                    <div class="botLeft">
+                            <div class="h1"><span>活跃人数</span><span>(近七日)</span></div>
+                    </div>
+                    <div class="botRight">
+                            <div class="h1"><span>活跃人数</span><span>(近七日)</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="right"></div>
+        </div>
+        
+    </div>
+    <script>
+        //左边第一个echars
+        var leftTop = echarts.init(document.getElementById('leftTop'));
+        var option = {
+            xAxis: {
+                type: 'category',
+                data: ['05-27', '05-28', '05-29', '05-30', '05-31', '06-01', '06-02'],
+                axisTick: {
+                    show: false
+                },
+                axisLabel:{//x轴文字显示样式
+                    fontSize:15,
+                    textStyle: {
+                        color: '#fff'
+                    }
+                }
+            },
+            yAxis: {
+                name:'单位 (万)',
+                splitLine:{ 
+                    lineStyle: { //控制Y轴的显示轴
+                            color:"#f00",//颜色
+                            type:'dashed',//类型
+                            opacity:0//显示的模糊度
+                        }
+                },
+                axisLabel:{ //y轴的文字大小以及颜色
+                    fontSize:15,
+                    textStyle: {
+                        color: '#fff'
+                    }
+                },
+                nameTextStyle:{//y轴顶部文字显示样式
+                    color:'#fff'
+                },
+                type: 'value',
+                axisTick: { //是否显示分割线
+                    show: false
+                },
+            },
+            series: [{
+                type: 'line',//折线的类型
+                areaStyle: {},
+                smooth:true,//ture为平滑显示曲线
+                data: [120, 220, 301, 434, 590, 330, 720],
+                itemStyle: {
+                        normal: {
+                            color: "#00fffd" //折线颜色
+                        },
+                    },
+                    areaStyle: {
+                        normal: {//折线下面的阴影样式
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgba(15, 124, 209, 1)',
+                            },
+                            {
+                                offset: 0.7,
+                                color: 'rgba(15, 124, 209, 0.7)',
+                            }, {
+                                offset: 1,
+                                color: 'rgba(15, 124, 209, 0.1)',
+                            }])
+                        }
+                    },
+                label: {//折线上面的文字样式
+                    normal: {
+                        show: true,
+                        position: 'top',
+                        color:'#fff'
+                    }
+                },
+            }]
+        };
+        leftTop.setOption(option);
+        // leftTop.resize();
+
+        //左边第二个echars
+        var leftBot = echarts.init(document.getElementById('leftBot'));
+        var options ={
+            color: ['#00dbf4'],
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    axisLabel:{
+                        color:"#fff"
+                    },
+                    data: ['05-27', '05-28', '05-29', '05-30', '05-31', '06-01', '06-02'],
+                    axisTick: {
+                        show:false,
+                        alignWithLabel: true
+                    }
+                }
+            ],
+            yAxis: [
+                {
+                    name:'单位 (人)',
+                    type: 'value',
+                    nameTextStyle:{
+                        color:"#fff"
+                    },
+                    splitLine:{ 
+                        lineStyle: { //控制Y轴的显示轴
+                                color:"#f00",//颜色
+                                type:'dashed',//类型
+                                opacity:0//显示的模糊度
+                            }
+                    },
+                    axisLabel:{
+                        color:"#fff"
+                    },
+                    axisTick:{
+                        show:false
+                    }
+                }
+            ],
+            series: [
+                {
+                    name: '直接访问',
+                    type: 'bar',
+                    barWidth: '60%',
+                    data: [10, 20, 50, 24, 70, 90, 40],
+                    label:{
+                        normal:{
+                            color:'#a0a2c5',
+                            show:true,
+                            position:'top',
+                        }
+                    }
+                }
+            ]
+        };
+        leftBot.setOption(options);
+    </script>
 </body>
 </html>

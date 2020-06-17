@@ -110,6 +110,12 @@ body {
 .mess .bot .left .leftCenter .newMessage {
   width: 100%;
   height: 3.625rem;
+  overflow: hidden;
+}
+.mess .bot .left .leftCenter .newMessage ul {
+  height: 2.75rem;
+  width: 100%;
+  overflow: hidden;
 }
 .mess .bot .left .leftCenter .newMessage ul li {
   width: 100%;
@@ -137,7 +143,7 @@ body {
 .mess .bot .left .leftCenter .newMessage ul li .liLeft span {
   width: 3.4375rem;
   overflow: hidden;
-  white-space: normal;
+  white-space: nowrap;
   text-overflow: ellipsis;
 }
 .mess .bot .left .leftCenter .newMessage ul li .liRight span {
@@ -260,7 +266,6 @@ body {
 .mess .bot .center .centerBot {
   width: 11.325rem;
   height: 4.0625rem;
-  background: pink;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -269,7 +274,10 @@ body {
 .mess .bot .center .centerBot .botLeft {
   width: 5.75rem;
   height: 100%;
-  background: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 .mess .bot .center .centerBot .botLeft .h1 {
   width: 100%;
@@ -284,10 +292,17 @@ body {
   font-size: 0.2rem;
   color: #fff;
 }
+.mess .bot .center .centerBot .botLeft .anzhuang {
+  width: 100%;
+  height: 3.75rem;
+}
 .mess .bot .center .centerBot .botRight {
   width: 5.375rem;
   height: 100%;
-  background: yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 .mess .bot .center .centerBot .botRight .h1 {
   width: 100%;
@@ -302,7 +317,101 @@ body {
   font-size: 0.2rem;
   color: #fff;
 }
+.mess .bot .center .centerBot .botRight .newMee {
+  width: 100%;
+  height: 3.75rem;
+}
 .mess .bot .right {
   width: 6.3rem;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.mess .bot .right .rightTop {
+  width: 100%;
+  height: 4.025rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mess .bot .right .rightTop .h1 {
+  width: 100%;
+  height: 0.225rem;
+  border-left: 0.075rem solid #00fffd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.mess .bot .right .rightTop .h1 span {
+  margin-left: 0.175rem;
+  font-size: 0.2rem;
+  color: #fff;
+}
+.mess .bot .right .rightTop .rightVideo {
+  width: 6.3rem;
+  height: 2.9375rem;
+  margin: 0 auto;
+}
+.mess .bot .right .rightTop .rightVideo video {
+  width: 6.3rem;
+  height: 100%;
+  object-fit: cover;
+  background: none;
+}
+.mess .bot .right .rightTop .rightVideoTitle {
+  font-size: 0.2rem;
+  line-height: 0.6875rem;
+  color: #fff;
+}
+.mess .bot .right .rightCenter {
+  width: 100%;
+  height: 3.95rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.mess .bot .right .rightCenter .h1 {
+  width: 100%;
+  height: 0.225rem;
+  border-left: 0.075rem solid #00fffd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.mess .bot .right .rightCenter .h1 span {
+  margin-left: 0.175rem;
+  font-size: 0.2rem;
+  color: #fff;
+}
+.mess .bot .right .rightCenter .rightZhu {
+  width: 100%;
+  height: 3.5rem;
+}
+.mess .bot .right .rightBot {
+  width: 100%;
+  height: 4.1375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.mess .bot .right .rightBot .h1 {
+  width: 100%;
+  height: 0.225rem;
+  border-left: 0.075rem solid #00fffd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.mess .bot .right .rightBot .h1 span {
+  margin-left: 0.175rem;
+  font-size: 0.2rem;
+  color: #fff;
+}
+.mess .bot .right .rightBot .rightQi {
+  width: 100%;
+  height: 3.75rem;
 }

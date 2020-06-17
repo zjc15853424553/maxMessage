@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/index.css">
     <script src="./js/flexible.js"></script>
+    <!-- 引入jquery -->
+    <script src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/echarts.min.js"></script>
     <title>数据大屏</title>
 </head>
@@ -29,8 +31,44 @@
                 </div>
                 <div class="leftCenter">
                         <div class="h1"><span>热点新闻</span></div>
-                        <div class="newMessage">
+                        <div class="newMessage" id="newMessage">
                             <ul>
+                                <li>
+                                    <div class="liLeft">
+                                        <img src="./img/leftnewMess.png" alt=""><span>城市住建局召开创建全国文明城市</span>
+                                    </div>
+                                    <div class="liRight"><span>2020-06-10 78956</span></div>
+                                </li>
+                                <li>
+                                    <div class="liLeft">
+                                        <img src="./img/leftnewMess.png" alt=""><span>城市住建局召开创建全国文明城市</span>
+                                    </div>
+                                    <div class="liRight"><span>2020-06-10 78956</span></div>
+                                </li>
+                                <li>
+                                    <div class="liLeft">
+                                        <img src="./img/leftnewMess.png" alt=""><span>城市住建局召开创建全国文明城市</span>
+                                    </div>
+                                    <div class="liRight"><span>2020-06-10 78956</span></div>
+                                </li>
+                                <li>
+                                    <div class="liLeft">
+                                        <img src="./img/leftnewMess.png" alt=""><span>城市住建局召开创建全国文明城市</span>
+                                    </div>
+                                    <div class="liRight"><span>2020-06-10 78956</span></div>
+                                </li>
+                                <li>
+                                    <div class="liLeft">
+                                        <img src="./img/leftnewMess.png" alt=""><span>城市住建局召开创建全国文明城市</span>
+                                    </div>
+                                    <div class="liRight"><span>2020-06-10 78956</span></div>
+                                </li>
+                                <li>
+                                    <div class="liLeft">
+                                        <img src="./img/leftnewMess.png" alt=""><span>城市住建局召开创建全国文明城市</span>
+                                    </div>
+                                    <div class="liRight"><span>2020-06-10 78956</span></div>
+                                </li>
                                 <li>
                                     <div class="liLeft">
                                         <img src="./img/leftnewMess.png" alt=""><span>城市住建局召开创建全国文明城市</span>
@@ -93,17 +131,37 @@
                 </div>
                 <div class="centerBot">
                     <div class="botLeft">
-                            <div class="h1"><span>活跃人数</span><span>(近七日)</span></div>
+                            <div class="h1"><span>安装量</span><span>(近七日)</span></div>
+                            <div class="anzhuang" id="anzhuang"></div>
                     </div>
                     <div class="botRight">
-                            <div class="h1"><span>活跃人数</span><span>(近七日)</span></div>
+                            <div class="h1"><span>新闻浏览量趋势</span><span>(近七日)</span></div>
+                            <div class="newMee" id="newMee"></div>
                     </div>
                 </div>
             </div>
-            <div class="right"></div>
+            <div class="right">
+                <div class="rightTop">
+                    <div class="h1"><span>电视直播</span><span></span></div>
+                    <div class="rightVideo">
+                        <video src="http://wxadmin.qtvinfo.com/images/36/1a/89/205264346c7945223892bdc33c97afecd775e2e3.mp4" controls muted autoplay></video>
+                    </div>
+                    <div class="rightVideoTitle">项城一套</div>
+                </div>
+                <div class="rightCenter">
+                    <div class="h1"><span>注册量趋势</span><span></span></div>
+                    <div class="rightZhu" id="rightZhu"></div>
+                </div>
+                <div class="rightBot">
+                    <div class="h1"><span>启动量</span><span>(近七日)</span></div>
+                    <div class="rightQi" id="rightQi"></div>
+                </div>
+            </div>
         </div>
         
     </div>
+    <!-- 引入滚动样式 -->
+    <script src="./js/pmd.js"></script>
     <script>
         //左边第一个echars
         var leftTop = echarts.init(document.getElementById('leftTop'));
@@ -113,6 +171,12 @@
                 data: ['05-27', '05-28', '05-29', '05-30', '05-31', '06-01', '06-02'],
                 axisTick: {
                     show: false
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#5a5f8f',
+                        width: 2 //这里是为了突出显示加上的
+                    }
                 },
                 axisLabel:{//x轴文字显示样式
                     fontSize:15,
@@ -129,6 +193,12 @@
                             type:'dashed',//类型
                             opacity:0//显示的模糊度
                         }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#5a5f8f',
+                        width: 2 //这里是为了突出显示加上的
+                    }
                 },
                 axisLabel:{ //y轴的文字大小以及颜色
                     fontSize:15,
@@ -149,6 +219,13 @@
                 areaStyle: {},
                 smooth:true,//ture为平滑显示曲线
                 data: [120, 220, 301, 434, 590, 330, 720],
+                lineStyle:{
+                    normal:{
+                        width:4
+                    }
+                },
+                symbol: 'circle',     //设定为实心点
+                symbolSize: 15,   //设定实心点的大小
                 itemStyle: {
                         normal: {
                             color: "#00fffd" //折线颜色
@@ -203,6 +280,12 @@
                     axisLabel:{
                         color:"#fff"
                     },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#5a5f8f',
+                            width: 2 //这里是为了突出显示加上的
+                        }
+                    },
                     data: ['05-27', '05-28', '05-29', '05-30', '05-31', '06-01', '06-02'],
                     axisTick: {
                         show:false,
@@ -216,6 +299,12 @@
                     type: 'value',
                     nameTextStyle:{
                         color:"#fff"
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#5a5f8f',
+                            width: 2 //这里是为了突出显示加上的
+                        }
                     },
                     splitLine:{ 
                         lineStyle: { //控制Y轴的显示轴
@@ -249,6 +338,465 @@
             ]
         };
         leftBot.setOption(options);
+
+        //中间底部左边echars
+        var myAn = echarts.init(document.getElementById('anzhuang'));
+        var myA ={
+            grid: {
+                left: '10%',
+                top: '5%',
+                bottom: '10%',
+                right: '5%'
+            },
+            xAxis: {
+                type: 'category',
+                data: ['05-27', '05-28', '05-29', '05-30', '05-31', '06-01', '06-02'],
+            axisTick: {
+                    show: false,
+                    
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#5a5f8f',
+                        width: 2 //这里是为了突出显示加上的
+                    }
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: '#c0c1d5',
+                        fontSize: 12
+                    }
+                }
+            },
+            yAxis: [{
+                    splitNumber: 2,
+                    axisTick: {
+                        show: false
+                    },
+                    name:'单位 (百人)',
+                    axisLine: {
+                        lineStyle: {
+                            color: '#5a5f8f',
+                            width: 2 //这里是为了突出显示加上的
+                        }
+                    },
+                    axisLabel: {
+                        textStyle: {
+                            color: '#c0c1d5'
+                        }
+                    },
+                    splitArea: {
+                        areaStyle: {
+                            color: 'rgba(255,255,255,.5)'
+                        }
+                    },
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            color: 'rgba(255, 129, 109, 0.1)',
+                            width: 0.5,
+                            type: 'dashed'
+                        }
+                    }
+                }
+            ],
+            series: [{
+                name: 'hill',
+                type: 'pictorialBar',
+                symbol: 'path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z',
+                label: {
+                    show: true,
+                    position: 'top',
+                    distance: 15,
+                    color: '#c0c1d5',
+                    fontWeight: 'bolder',
+                    fontSize: 16,
+                },
+                itemStyle: {
+                    normal: {
+                        color: {
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: [{
+                                    offset: 0,
+                                    color: 'rgba(0, 252, 238, 1)' //  0%  处的颜色
+                                },
+                                {
+                                    offset: 1,
+                                    color: 'rgba(0, 252, 238, .6)' //  100%  处的颜色
+                                }
+                            ],
+                            global: false //  缺省为  false
+                        }
+                    },
+                    emphasis: {
+                        opacity: 1
+                    }
+                },
+                data: [23, 160, 45, 78, 52, 19, 200],
+                z: 10
+            }]
+        };
+        myAn.setOption(myA);
+
+        //中间底部右边echars
+        var newMee = echarts.init(document.getElementById('newMee'));
+        var newMe = {
+            grid: {
+                left: '10%',
+                top: '5%',
+                bottom: '10%',
+                right: '0'
+            },
+            xAxis: {
+                type: 'category',
+                data: ['05-27', '05-28', '05-29', '05-30', '05-31', '06-01', '06-02'],
+                axisTick: {
+                    show: false
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#5a5f8f',
+                        width: 2 //这里是为了突出显示加上的
+                    }
+                },
+                axisLabel:{//x轴文字显示样式
+                    fontSize:15,
+                    textStyle: {
+                        color: '#fff'
+                    }
+                }
+            },
+            yAxis: {
+                name:'单位 (万)',
+                splitLine:{ 
+                    lineStyle: { //控制Y轴的显示轴
+                            color:"#f00",//颜色
+                            type:'dashed',//类型
+                            opacity:0//显示的模糊度
+                        }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#5a5f8f',
+                        opacity:0.2,
+                        width: 2 //这里是为了突出显示加上的
+                    }
+                },
+                axisLabel:{ //y轴的文字大小以及颜色
+                    fontSize:15,
+                    textStyle: {
+                        color: '#fff'
+                    }
+                },
+                nameTextStyle:{//y轴顶部文字显示样式
+                    color:'#fff'
+                },
+                type: 'value',
+                axisTick: { //是否显示分割线
+                    show: false
+                },
+            },
+            series: [{
+                type: 'line',//折线的类型
+                areaStyle: {},
+                smooth:true,//ture为平滑显示曲线
+                data: [120, 220, 301, 434, 590, 330, 720],
+                lineStyle:{
+                    normal:{
+                        width:4
+                    }
+                },
+                symbol: 'circle',     //设定为实心点
+                symbolSize: 15,   //设定实心点的大小
+                itemStyle: {
+                        normal: {
+                            color: "#00fffd" //折线颜色
+                        },
+                    },
+                    areaStyle: {
+                        normal: {//折线下面的阴影样式
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgba(15, 124, 209, 1)',
+                            },
+                            {
+                                offset: 0.7,
+                                color: 'rgba(15, 124, 209, 0.7)',
+                            }, {
+                                offset: 1,
+                                color: 'rgba(15, 124, 209, 0.1)',
+                            }])
+                        }
+                    },
+                label: {//折线上面的文字样式
+                    normal: {
+                        show: true,
+                        position: 'top',
+                        color:'#fff'
+                    }
+                },
+            }]
+        };
+        newMee.setOption(newMe);
+
+          //右边中间的图标
+          var myZhu = echarts.init(document.getElementById('rightZhu'));
+          var myZh ={
+                grid: {
+                    left: '10%',
+                    top: '5%',
+                    bottom: '20%',
+                    right: '0'
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['05-27', '05-28', '05-29', '05-30', '05-31', '06-01', '06-02'],
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#5a5f8f',
+                            width: 2 //这里是为了突出显示加上的
+                        }
+                    },
+                    axisLabel:{//x轴文字显示样式
+                        fontSize:15,
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    }
+                },
+                yAxis: {
+                    name:'单位 (万)',
+                    splitLine:{ 
+                        lineStyle: { //控制Y轴的显示轴
+                                color:"#f00",//颜色
+                                type:'dashed',//类型
+                                opacity:0//显示的模糊度
+                            }
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#5a5f8f',
+                            opacity:0.2,
+                            width: 2 //这里是为了突出显示加上的
+                        }
+                    },
+                    axisLabel:{ //y轴的文字大小以及颜色
+                        fontSize:15,
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    },
+                    nameTextStyle:{//y轴顶部文字显示样式
+                        color:'#fff'
+                    },
+                    type: 'value',
+                    axisTick: { //是否显示分割线
+                        show: false
+                    },
+                },
+                series: [{
+                    type: 'line',//折线的类型
+                    areaStyle: {},
+                    smooth:true,//ture为平滑显示曲线
+                    data: [120, 220, 301, 434, 590, 330, 720],
+                    lineStyle:{
+                        normal:{
+                            width:4
+                        }
+                    },
+                    symbol: 'circle',     //设定为实心点
+                    symbolSize: 15,   //设定实心点的大小
+                    itemStyle: {
+                            normal: {
+                                color: "#00fffd" //折线颜色
+                            },
+                        },
+                        areaStyle: {
+                            normal: {//折线下面的阴影样式
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                    offset: 0,
+                                    color: 'rgba(15, 124, 209, 1)',
+                                },
+                                {
+                                    offset: 0.7,
+                                    color: 'rgba(255, 255, 255, 0.1)',
+                                }, {
+                                    offset: 1,
+                                    color: 'rgba(255, 255, 255, 0)',
+                                }])
+                            }
+                        },
+                    label: {//折线上面的文字样式
+                        normal: {
+                            show: true,
+                            position: 'top',
+                            color:'#fff'
+                        }
+                    },
+                }]
+            };
+          myZhu.setOption(myZh)
+
+          //右边最后一个柱状图数据
+          var myQi = echarts.init(document.getElementById('rightQi'));
+          xData = ['05-27', '05-28', '05-29', '05-30', '05-31', '06-01', '06-02'];
+          yData = [342, 230, 425,454,333,444,622];
+          var myQ ={
+                "grid": {
+                    "top": "5%",
+                    "left": "5%",
+                    "bottom": "5%",
+                    "right": "5%",
+                    "containLabel": true
+                },
+                tooltip:{
+                show:true 
+                },
+                animation: false,
+                "xAxis": [{
+                    "type": "category",
+                    "data": xData,
+                    "axisTick": {
+                        "alignWithLabel": true
+                    },
+                    "nameTextStyle": {
+                        "color": "#82b0ec"
+                    },
+                    "axisLine": {
+                        show: false,
+                        "lineStyle": {
+                            "color": "#82b0ec"
+                        }
+                    },
+                    "axisLabel": {
+                        "textStyle": {
+                            "color": "#c0c2db"
+                        },
+                        margin: 30
+                    }
+                }],
+                "yAxis": [{
+                    name:'单位 (次)',
+                    nameTextStyle:{
+                        color:'#fff',
+                    },
+                    show: true,
+                    "type": "value",
+                    'data':[342, 230, 425,454,333,444,622],
+                    "axisLabel": {
+                        "textStyle": {
+                            "color": "#c0c2db"
+                        },
+                    },
+                    splitLine:{ 
+                        lineStyle: { //控制Y轴的显示轴
+                                color:"#0c2c5a",//颜色
+                                type:'dashed',//类型
+                                opacity:0//显示的模糊度
+                            }
+                    },
+                    axisTick:{
+                        show:false
+                    },
+                    "axisLine": {
+                        "show": false
+                    }
+                }],
+                "series": [{
+                        "name": "",
+                        type: 'pictorialBar',
+                        symbolSize: [40, 10],
+                        symbolOffset: [0, -6],
+                        symbolPosition: 'end',
+                        z: 12,
+                        // "barWidth": "0",
+                        "label": {
+                            "normal": {
+                                "show": true,
+                                "position": "top",
+                                // "formatter": "{c}%"
+                                fontSize: 25,
+                                fontWeight: 'bold',
+                                color: '#34DCFF'
+                            }
+                        },
+                        color: "#2DB1EF",
+                        data: yData
+                    },
+                    {
+                        name: '',
+                        type: 'pictorialBar',
+                        symbolSize: [40, 10],
+                        symbolOffset: [0, 7],
+                        // "barWidth": "20",
+                        z: 12,
+                        "color": "#2DB1EF",
+                        "data": yData
+                    },
+                    {
+                        name: '',
+                        type: 'pictorialBar',
+                        symbolSize: [50, 15],
+                        symbolOffset: [0, 12],
+                        z: 10,
+                        itemStyle: {
+                            normal: {
+                                color: 'transparent',
+                                borderColor: '#2EA9E5',
+                                borderType: 'solid',
+                                borderWidth: 1
+                            }
+                        },
+                        data: yData
+                    },
+                    {
+                        name: '',
+                        type: 'pictorialBar',
+                        symbolSize: [70, 20],
+                        symbolOffset: [0, 18],
+                        z: 10,
+                        itemStyle: {
+                            normal: {
+                                color: 'transparent',
+                                borderColor: '#19465D',
+                                borderType: 'solid',
+                                borderWidth: 2
+                            }
+                        },
+                        data: yData
+                    },
+                    {
+                        type: 'bar',
+                        //silent: true,
+                        "barWidth": "40",
+                        barGap: '10%', // Make series be overlap
+                        barCateGoryGap: '10%',
+                        itemStyle: {
+                            normal: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 0.7, [{
+                                        offset: 0,
+                                        color: "#38B2E6"
+                                    },
+                                    {
+                                        offset: 1,
+                                        color: "#0B3147"
+                                    }
+                                ]),
+                                opacity: .8
+                            },
+                        },
+                        data: yData
+                    }
+                ]
+            };
+            myQi.setOption(myQ)
     </script>
 </body>
 </html>

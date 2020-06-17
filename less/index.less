@@ -106,7 +106,11 @@ body{
                 .newMessage{
                     width: 100%;
                     height:3.625rem;
+                    overflow: hidden;
                     ul{
+                        height: 2.75rem;
+                        width: 100%;
+                        overflow: hidden;
                         li{
                             width: 100%;
                             font-size: .3rem;
@@ -130,8 +134,8 @@ body{
                                 }
                                 span{
                                     width: 3.4375rem;
-                                    overflow: hidden;
-                                    white-space: normal;
+                                    overflow: hidden; 
+                                    white-space: nowrap; 
                                     text-overflow: ellipsis;
                                 }
                             }
@@ -247,7 +251,6 @@ body{
             .centerBot{
                 width: 11.325rem;
                 height: 4.0625rem;
-                background: pink;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -255,7 +258,10 @@ body{
                 .botLeft{
                     width: 5.75rem;
                     height: 100%;
-                    background: red;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
                     .h1{
                         width: 100%;
                         height: .225rem;
@@ -269,11 +275,18 @@ body{
                             color: #fff;
                         }
                     }
+                    .anzhuang{
+                        width: 100%;
+                        height: 3.75rem;
+                    }
                 }
                 .botRight{
                     width: 5.375rem;
                     height: 100%;
-                    background: yellow;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
                     .h1{
                         width: 100%;
                         height: .225rem;
@@ -286,6 +299,10 @@ body{
                             font-size:.2rem;
                             color: #fff;
                         }
+                    }
+                    .newMee{
+                        width: 100%;
+                        height: 3.75rem;
                     }
                 }
             }
@@ -293,6 +310,98 @@ body{
         .right{
             width: 6.3rem;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            .rightTop{
+                width: 100%;
+                height: 4.025rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .h1{
+                    width: 100%;
+                    height: .225rem;
+                    border-left: .075rem solid #00fffd;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    span{
+                        margin-left: .175rem;
+                        font-size:.2rem;
+                        color: #fff;
+                    }
+                }
+                .rightVideo{
+                    width: 6.3rem;
+                    height: 2.9375rem;
+                    margin: 0 auto;
+                    video{
+                        width: 6.3rem;
+                        height: 100%;
+                        object-fit: cover;
+                        background: none;
+                    }
+                }
+                .rightVideoTitle{
+                    font-size: .2rem;
+                    line-height: .6875rem;
+                    color: #fff;
+                }
+            }
+            .rightCenter{
+                width: 100%;
+                height: 3.95rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                .h1{
+                    width: 100%;
+                    height: .225rem;
+                    border-left: .075rem solid #00fffd;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    span{
+                        margin-left: .175rem;
+                        font-size:.2rem;
+                        color: #fff;
+                    }
+                }
+                .rightZhu{
+                    width: 100%;
+                    height: 3.5rem;
+
+                }
+            }
+            .rightBot{
+                width: 100%;
+                height: 4.1375rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                .h1{
+                    width: 100%;
+                    height: .225rem;
+                    border-left: .075rem solid #00fffd;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    span{
+                        margin-left: .175rem;
+                        font-size:.2rem;
+                        color: #fff;
+                    }
+                }
+                .rightQi{
+                    width: 100%;
+                    height: 3.75rem;
+                    
+                }
+            }
         }
     }
     

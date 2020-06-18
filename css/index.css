@@ -184,7 +184,7 @@ body {
 }
 .mess .bot .center .centerTop {
   width: 11.325rem;
-  height: 8.075rem;
+  height: 7.875rem;
   position: relative;
   background: url('../img/qiuList.png') center center no-repeat;
   background-size: 100% 100%;
@@ -197,9 +197,128 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.mess .bot .center .centerTop .cc img {
+.mess .bot .center .centerTop .cc .yuanOne {
+  width: 2.225rem;
+  height: 2.225rem;
+  position: absolute;
+  animation: myOne 5s linear infinite;
+  transform-origin: center center;
+  left: 50%;
+  top: 50%;
+  margin-left: -1.1rem;
+  margin-top: -1.1rem;
+}
+.mess .bot .center .centerTop .cc .yuanOne img {
   width: 100%;
   height: 100%;
+}
+@keyframes myOne {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.mess .bot .center .centerTop .cc .yuanTwo {
+  width: 2.925rem;
+  height: 2.925rem;
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  margin-left: -1.45rem;
+  margin-top: -1.45rem;
+  animation: myTwo 6s linear infinite;
+  transform-origin: center center;
+}
+.mess .bot .center .centerTop .cc .yuanTwo img {
+  width: 100%;
+  height: 100%;
+}
+@keyframes myTwo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.mess .bot .center .centerTop .cc .yuanthree {
+  width: 3.5rem;
+  height: 3.5rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -1.75rem;
+  margin-left: -1.75rem;
+  animation: myThree 7s linear infinite;
+  transform-origin: center center;
+}
+.mess .bot .center .centerTop .cc .yuanthree img {
+  width: 100%;
+  height: 100%;
+}
+@keyframes myThree {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.mess .bot .center .centerTop .cc .xian {
+  width: 3.65rem;
+  height: 3.65rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 0.0125rem dashed #5377d8;
+}
+.mess .bot .center .centerTop .cc .yuanwai {
+  width: 4.6625rem;
+  height: 4.6625rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -2.33rem;
+  margin-left: -2.33rem;
+  animation: myFour 8s linear infinite;
+  transform-origin: center center;
+}
+.mess .bot .center .centerTop .cc .yuanwai img {
+  width: 100%;
+  height: 100%;
+}
+@keyframes myFour {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.mess .bot .center .centerTop .cc .xianwO {
+  width: 5.225rem;
+  height: 5.225rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 0.0125rem dashed #5780e0;
+}
+.mess .bot .center .centerTop .cc .xianwT {
+  width: 5.875rem;
+  height: 5.875rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 0.0125rem dashed #5780e0;
 }
 .mess .bot .center .centerTop .one,
 .mess .bot .center .centerTop .two,

@@ -122,20 +122,18 @@
             <div class="center">
                 <div class="centerTop">
                     <div class="cc">
-                        <div class="yuanOne"><img src="./img/yuanOne.png" alt=""></div>
+                        <div class="yuanOne"><img src="./img/picc.gif" alt=""></div>
                         <div class="yuanTwo"><img src="./img/yuanTwo.png" alt=""></div>
                         <div class="yuanthree"><img src="./img/yuanthree.png" alt=""></div>
                         <div class="xian"></div>
                         <div class="yuanwai"><img src="./img/yuanwai.png" alt=""></div>
-                        <div class="xianwO"></div>
-                        <div class="xianwT"></div>
                     </div>
-                    <div class="one"><span>总PV访问量</span><h1>98 , 456 , 567</h1></div>
-                    <div class="two"><span>总PV访问量</span><h1>98 , 456 , 567</h1></div>
-                    <div class="three"><span>总PV访问量</span><h1>98 , 456 , 567</h1></div>
-                    <div class="four"><span>总PV访问量</span><h1>98 , 456 , 567</h1></div>
-                    <div class="five"><span>总PV访问量</span><h1>98 , 456 , 567</h1></div>
-                    <div class="six"><span>总PV访问量</span><h1>98 , 456 , 567</h1></div>
+                    <div class="one"><span>总PV访问量</span><h1>984,565,67</h1></div>
+                    <div class="two"><span>总PV访问量</span><h1>984,565,67</h1></div>
+                    <div class="three"><span>总PV访问量</span><h1>984,565,67</h1></div>
+                    <div class="four"><span>总PV访问量</span><h1>984,565,67</h1></div>
+                    <div class="five"><span>总PV访问量</span><h1>984,565,67</h1></div>
+                    <div class="six"><span>总PV访问量</span><h1>984,565,67</h1></div>
                 </div>
                 <div class="centerBot">
                     <div class="botLeft">
@@ -187,10 +185,7 @@
                     }
                 },
                 axisLabel:{//x轴文字显示样式
-                    fontSize:15,
-                    textStyle: {
-                        color: '#fff'
-                    }
+                    color:'#fff'
                 }
             },
             yAxis: {
@@ -209,10 +204,7 @@
                     }
                 },
                 axisLabel:{ //y轴的文字大小以及颜色
-                    fontSize:15,
-                    textStyle: {
-                        color: '#fff'
-                    }
+                    color:'#fff'
                 },
                 nameTextStyle:{//y轴顶部文字显示样式
                     color:'#fff'
@@ -255,10 +247,11 @@
                         }
                     },
                 label: {//折线上面的文字样式
-                    normal: {
-                        show: true,
-                        position: 'top',
-                        color:'#fff'
+                    normal:{
+                        color:'#a0a2c5',
+                        show:true,
+                        position:'top',
+                        fontSize: 16,
                     }
                 },
             }]
@@ -277,9 +270,10 @@
                 }
             },
             grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
+                left: '5%',
+                right: '5%',
+                bottom: '10%',
+                top:'15%',
                 containLabel: true
             },
             xAxis: [
@@ -289,8 +283,9 @@
                         color:"#fff"
                     },
                     axisLine: {
-                        lineStyle: {
-                            color: '#5a5f8f',
+                        fontSize:15,
+                        textStyle: {
+                            color: '#fff',
                             width: 2 //这里是为了突出显示加上的
                         }
                     },
@@ -309,8 +304,9 @@
                         color:"#fff"
                     },
                     axisLine: {
-                        lineStyle: {
-                            color: '#5a5f8f',
+                        fontSize:15,
+                        textStyle: {
+                            color: '#fff',
                             width: 2 //这里是为了突出显示加上的
                         }
                     },
@@ -340,6 +336,7 @@
                             color:'#a0a2c5',
                             show:true,
                             position:'top',
+                            fontSize: 16,
                         }
                     }
                 }
@@ -352,8 +349,8 @@
         var myA ={
             grid: {
                 left: '10%',
-                top: '5%',
-                bottom: '10%',
+                top: '15%',
+                bottom: '15%',
                 right: '5%'
             },
             xAxis: {
@@ -370,10 +367,7 @@
                     }
                 },
                 axisLabel: {
-                    textStyle: {
-                        color: '#c0c1d5',
-                        fontSize: 12
-                    }
+                    color:'#fff'
                 }
             },
             yAxis: [{
@@ -382,6 +376,7 @@
                         show: false
                     },
                     name:'单位 (百人)',
+                    nameTextStyle:{color:'#fff'},
                     axisLine: {
                         lineStyle: {
                             color: '#5a5f8f',
@@ -389,9 +384,7 @@
                         }
                     },
                     axisLabel: {
-                        textStyle: {
-                            color: '#c0c1d5'
-                        }
+                        color:'#fff'
                     },
                     splitArea: {
                         areaStyle: {
@@ -413,12 +406,12 @@
                 type: 'pictorialBar',
                 symbol: 'path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z',
                 label: {
-                    show: true,
-                    position: 'top',
-                    distance: 15,
-                    color: '#c0c1d5',
-                    fontWeight: 'bolder',
-                    fontSize: 16,
+                    normal:{
+                        color:'#a0a2c5',
+                        show:true,
+                        position:'top',
+                        fontSize: 16,
+                    }
                 },
                 itemStyle: {
                     normal: {
@@ -455,9 +448,9 @@
         var newMe = {
             grid: {
                 left: '10%',
-                top: '5%',
-                bottom: '10%',
-                right: '0'
+                top: '15%',
+                bottom: '15%',
+                right: '5%'
             },
             xAxis: {
                 type: 'category',
@@ -472,10 +465,7 @@
                     }
                 },
                 axisLabel:{//x轴文字显示样式
-                    fontSize:15,
-                    textStyle: {
-                        color: '#fff'
-                    }
+                    color:'#fff'
                 }
             },
             yAxis: {
@@ -490,15 +480,11 @@
                 axisLine: {
                     lineStyle: {
                         color: '#5a5f8f',
-                        opacity:0.2,
                         width: 2 //这里是为了突出显示加上的
                     }
                 },
                 axisLabel:{ //y轴的文字大小以及颜色
-                    fontSize:15,
-                    textStyle: {
-                        color: '#fff'
-                    }
+                    color:'#fff'
                 },
                 nameTextStyle:{//y轴顶部文字显示样式
                     color:'#fff'
@@ -541,10 +527,11 @@
                         }
                     },
                 label: {//折线上面的文字样式
-                    normal: {
-                        show: true,
-                        position: 'top',
-                        color:'#fff'
+                    normal:{
+                        color:'#a0a2c5',
+                        show:true,
+                        position:'top',
+                        fontSize: 16,
                     }
                 },
             }]
@@ -558,7 +545,7 @@
                     left: '10%',
                     top: '5%',
                     bottom: '20%',
-                    right: '0'
+                    right: '8%'
                 },
                 xAxis: {
                     type: 'category',
@@ -573,10 +560,7 @@
                         }
                     },
                     axisLabel:{//x轴文字显示样式
-                        fontSize:15,
-                        textStyle: {
-                            color: '#fff'
-                        }
+                        color:'#fff'
                     }
                 },
                 yAxis: {
@@ -591,15 +575,11 @@
                     axisLine: {
                         lineStyle: {
                             color: '#5a5f8f',
-                            opacity:0.2,
                             width: 2 //这里是为了突出显示加上的
                         }
                     },
                     axisLabel:{ //y轴的文字大小以及颜色
-                        fontSize:15,
-                        textStyle: {
-                            color: '#fff'
-                        }
+                        color:'#fff'
                     },
                     nameTextStyle:{//y轴顶部文字显示样式
                         color:'#fff'
@@ -642,10 +622,11 @@
                             }
                         },
                     label: {//折线上面的文字样式
-                        normal: {
-                            show: true,
-                            position: 'top',
-                            color:'#fff'
+                        normal:{
+                            color:'#a0a2c5',
+                            show:true,
+                            position:'top',
+                            fontSize: 16,
                         }
                     },
                 }]
@@ -658,10 +639,10 @@
           yData = [342, 230, 425,454,333,444,622];
           var myQ ={
                 "grid": {
-                    "top": "5%",
+                    "top": "15%",
                     "left": "5%",
-                    "bottom": "5%",
-                    "right": "5%",
+                    "bottom": "7%",
+                    "right": "8%",
                     "containLabel": true
                 },
                 tooltip:{
@@ -684,9 +665,7 @@
                         }
                     },
                     "axisLabel": {
-                        "textStyle": {
-                            "color": "#c0c2db"
-                        },
+                        color:'#fff',
                         margin: 30
                     }
                 }],
@@ -699,9 +678,7 @@
                     "type": "value",
                     'data':[342, 230, 425,454,333,444,622],
                     "axisLabel": {
-                        "textStyle": {
-                            "color": "#c0c2db"
-                        },
+                        color:'#fff'
                     },
                     splitLine:{ 
                         lineStyle: { //控制Y轴的显示轴
@@ -720,19 +697,17 @@
                 "series": [{
                         "name": "",
                         type: 'pictorialBar',
-                        symbolSize: [40, 10],
-                        symbolOffset: [0, -6],
+                        symbolSize: [32, 5],
+                        symbolOffset: [0, -3],
                         symbolPosition: 'end',
                         z: 12,
                         // "barWidth": "0",
                         "label": {
-                            "normal": {
-                                "show": true,
-                                "position": "top",
-                                // "formatter": "{c}%"
-                                fontSize: 25,
-                                fontWeight: 'bold',
-                                color: '#c0c1d5'
+                            normal:{
+                                color:'#a0a2c5',
+                                show:true,
+                                position:'top',
+                                fontSize: 16,
                             }
                         },
                         color: "#2DB1EF",
@@ -741,7 +716,7 @@
                     {
                         name: '',
                         type: 'pictorialBar',
-                        symbolSize: [40, 10],
+                        symbolSize: [30, 5],
                         symbolOffset: [0, 7],
                         // "barWidth": "20",
                         z: 12,
@@ -751,7 +726,7 @@
                     {
                         name: '',
                         type: 'pictorialBar',
-                        symbolSize: [50, 15],
+                        symbolSize: [30, 5],
                         symbolOffset: [0, 12],
                         z: 10,
                         itemStyle: {
@@ -767,7 +742,7 @@
                     {
                         name: '',
                         type: 'pictorialBar',
-                        symbolSize: [70, 20],
+                        symbolSize: [40, 10],
                         symbolOffset: [0, 18],
                         z: 10,
                         itemStyle: {
@@ -783,12 +758,12 @@
                     {
                         type: 'bar',
                         //silent: true,
-                        "barWidth": "40",
+                        "barWidth": "30",
                         barGap: '10%', // Make series be overlap
                         barCateGoryGap: '10%',
                         itemStyle: {
                             normal: {
-                                color: new echarts.graphic.LinearGradient(0, 0, 0, 0.7, [{
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                         offset: 0,
                                         color: "#38B2E6"
                                     },

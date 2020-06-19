@@ -7,7 +7,7 @@
             $('ul').css({'margin-top':0});
         })
     }
-    $('ul').hover(function(){
+    $('ul').mouseover (function(){
         clearInterval(timer)
     },function(){
         timer = setInterval(auto,1000);
